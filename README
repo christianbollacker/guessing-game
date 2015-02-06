@@ -1,0 +1,6 @@
+
+
+This program asks the user for the year they were born.  From there the user is asked to guess there age in hours.
+If the user is correct or within one year in hours they will be alerted to the fact.
+If the user's guess is too low or too high they will be alerted.
+In this iteration you must reload the page to play again.
