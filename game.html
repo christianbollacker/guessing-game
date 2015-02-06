@@ -1,0 +1,39 @@
+<script>
+
+var  date, currentYear, questionAge, guessHours, ageHours;
+/* I knew it was possible to get the current date with JavaScript.  I used resources at w3school.com to learn
+how to get the date via new Date() and how also how to reduce that date into a four digit number using .getFullYear */
+
+date = new Date();
+currentYear = date.getFullYear();
+
+/* Early on in my process I was having trouble getting my result function to work and I thought it was because the prompts of
+questionAge and guessHours were being returned as strings.  I again used resources on w3school.com to learn about parseInt
+and how it would convert my input strings to numbers which was necessary for my ageHours variable. */
+
+questionAge = parseInt(prompt('What year were you born in? (Use four digits ex: 1981)'));
+guessHours = parseInt(prompt('How old do you think you are in hours?'));
+
+/* Here I am trying subtract the year the user was born in from the current year in order to determine an age in years.  
+Then I am multilpying the users age by the number of hours in a year. */
+
+ageHours = ((currentYear - questionAge) * 8760);
+
+/* I used resources on w3schools.com to learn how to use Math.abs get the absoulte value of a differrence. */
+
+var result = function() {
+  if (guessHours === ageHours) {
+    alert('Wow! That was a really good guess.  You are ' + ageHours + ' hours old.');
+  } else if (Math.abs(guessHours - ageHours) < 8760) {
+    alert('That was really close.  You are actually ' + ageHours + ' hours old.');
+  } else if (guessHours > ageHours) {
+    alert('You guessed too high.  Try a lower number.');  
+  } else {
+    alert('You guessed to low.  Try a higher number.');
+  }
+};
+
+result();
+
+
+</script>
